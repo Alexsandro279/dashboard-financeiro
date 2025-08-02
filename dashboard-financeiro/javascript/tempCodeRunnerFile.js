@@ -1,0 +1,1 @@
+console.log("Tipo selecionado:", tipo)

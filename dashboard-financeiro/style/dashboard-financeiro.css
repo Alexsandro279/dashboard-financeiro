@@ -1,0 +1,74 @@
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --text: #c9d1d9;
+  --accent: #58a6ff;
+  --danger: #f85149;
+  --success: #238636;
+}
+body {
+  background-color: var(--bg);
+  font-family: 'Orbitron', sans-serif;
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+}
+h1 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+#mesSelector {
+  display: block;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  max-width: 200px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 0;
+}
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #000;
+}
+.card h2 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.alerta {
+  background: var(--danger);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+canvas {
+  max-width: 100%;
+}
+input, select, button {
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+}
+button {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+#campoParcelas {
+  display: none;
+}

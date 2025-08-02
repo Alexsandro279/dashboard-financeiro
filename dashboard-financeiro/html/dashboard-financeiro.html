@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Financeiro Futurista</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style/dashboard-financeiro.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <h1>Dashboard Financeiro</h1>
+  <select id="mesSelector" onchange="trocarMes()"></select>
+  <div class="grid">
+    <div class="card">
+      <h2>Adicionar Entrada</h2>
+      <select id="tipoEntrada">
+        <option value="Salário">Salário</option>
+        <option value="Pé de Meia">Pé de Meia</option>
+        <option value="Diárias">Diárias</option>
+        <option value="Vale Transporte">Vale Transporte</option>
+        <option value="Pix">Pix</option>
+      </select>
+      <input type="number" id="entradaValor" placeholder="Valor em R$" />
+      <button onclick="adicionarEntrada()">Adicionar</button>
+      <ul id="listaEntradas"></ul>
+    </div>
+    <div class="card">
+      <h2>Adicionar Saída</h2>
+      <select id="tipoSaida" onchange="verificarParcelas()">
+        <option value="Cartão de Crédito">Cartão de Crédito</option>
+        <option value="Mãe a Receber">Mãe a Receber</option>
+        <option value="Banco do Brasil">Banco do Brasil</option>
+        <option value="Contas Extras">Contas Extras</option>
+      </select>
+      <input type="number" id="saidaValor" placeholder="Valor em R$" />
+      <div id="campoParcelas">
+        <input type="number" id="saidaParcelas" placeholder="Parcelas (opcional)" />
+      </div>
+
+      <input type="date" id="saidaVencimento" placeholder="Data de vencimento" />
+      <button onclick="adicionarSaida()">Adicionar</button>
+      <ul id="listaSaidas"></ul>
+      <div class="alerta" id="alertasVencimento"></div>
+    </div>
+    <div class="card">
+      <h2>Gráfico de Gastos</h2>
+      <canvas id="graficoGastos"></canvas>
+    </div>
+    <div class="card">
+      <h2>Resumo</h2>
+      <p><strong>Total de Entradas:</strong> R$ <span id="totalEntradas">0.00</span></p>
+      <p><strong>Total de Saídas:</strong> R$ <span id="totalSaidas">0.00</span></p>
+      <p><strong>Saldo Final:</strong> R$ <span id="saldoFinal">0.00</span></p>
+    </div>
+  </div>
+<div class="card">
+  <h2>Resumo</h2>
+  <p><strong>Total de Entradas:</strong> R$ <span id="totalEntradas">0.00</span></p>
+  <p><strong>Total de Saídas:</strong> R$ <span id="totalSaidas">0.00</span></p>
+  <p><strong>Saldo Final:</strong> R$ <span id="saldoFinal">0.00</span></p>
+  <button onclick="limparDados()" style="background: var(--danger); margin-top: 1rem;">🗑 Limpar Dados</button>
+</div>
+
+  <script src="../javascript/dashboard-financeiro.js"></script>
+</body>
+
+</html>
